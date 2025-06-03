@@ -1,172 +1,195 @@
-body {
-    background-color: black;
-    color: white;
-    font-family: 'JetBrains Mono', monospace;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'JetBrains Mono', monospace;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .container {
-    display: grid;
-    grid-template-areas: 
-        "navI navI"
-        "content navL";
-    grid-template-columns: 1fr auto;
-    width: 95%;
-    border: 20px solid transparent;
-    border-image: conic-gradient(#3779FF 0deg,#DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
-    border-image-slice: 1;
-    animation: border 4s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-areas:
+    "navI navI"
+    "content navL";
+  grid-template-columns: 1fr auto;
+  width: 100vw;
+  height: 100vh;
+  padding: 5vh;
+  border: 2vh solid transparent;
+  border-image: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
+  border-image-slice: 1;
+  animation: border 4s ease;
+  box-sizing: border-box;
+  z-index: 1;
 }
 
 @keyframes border {
-    0% {border-image: conic-gradient(#A429FF 0deg, #00A3FF 135deg,  #DB00FF 315deg, #A429FF 360deg); 
-        border-image-slice: 1;}
-    50% {border-image: conic-gradient(#A429FF 0deg, #DB00FF 45deg, #00A3FF 225deg, #A429FF 360deg);
-        border-image-slice: 1;}
-    100% {border-image: conic-gradient(#3779FF 0deg,#DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
-         border-image-slice: 1;}
+  0% {
+    border-image: conic-gradient(#A429FF 0deg, #00A3FF 135deg, #DB00FF 315deg, #A429FF 360deg);border-image-slice: 1;
+  }
+  50% {
+    border-image: conic-gradient(#A429FF 0deg, #DB00FF 45deg, #00A3FF 225deg, #A429FF 360deg);border-image-slice: 1;
+  }
+  100% {
+    border-image: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);border-image-slice: 1;
+  }
 }
 
+/* Nav icons */
 #navI {
-    grid-area: navI;
-    display: flex;
-    justify-content: flex-end;
-    gap: 5vw;
-    padding-right: 12vw;
-    padding-top: 5vh;
+  grid-area: navI;
+  display: flex;
+  justify-content: flex-end;
+  gap: 3vw;
 }
 
 #navI img {
-    width: 4vw;
-    transition: transform 0.5s;
+  width: 4vw;
+  transition: transform 0.5s;
 }
 
 #navI img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-#navLcontent {
-    padding-right: 5vw;
-    padding-top: 10vh;
-}
-
+/* Left nav panel */
 #navL {
-    grid-area: navL;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.2rem;
-    font-weight: bold;
-    text-align: center;
-    border-width: 5px;
-    border-style: solid;
-    border-image: linear-gradient(to bottom right, #00A3FF, black, black, black, black, #DB00FF);
-    border-image-slice: 1;
-    padding: 5vh;
-    height: 50vh; /* Adjust the height as needed */
-    width: 20vw;
-    margin: auto; /* Center vertically */
-}
-
-a:link {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-    }
-
-a:visited {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-    }
-
-    a:hover {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-    animation: link 4s;
-}
-
-@keyframes link{
-    0% {color: white;}
-    25% {color:#00A3FF;}
-    50% {color: #DB00FF;}
-    75% {color: #00A3FF;}
-    100% {color: white;}
+  grid-area: navL;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  border-width: 0.5vh;
+  border-style: solid;
+  border-image: linear-gradient(to bottom right, #00A3FF, black, black, black, black, #DB00FF);
+  border-image-slice: 1;
+  height: 50vh;
+  width: 20vw;
+  margin: auto;
 }
 
 #navL ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 #navL ul li {
-    margin: 10vh 0;
+  margin: 10vh 0;
 }
 
 #navL ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.5s;
+  color: white;
+  text-decoration: none;
+  transition: color 0.5s;
 }
 
 #navL ul li a:hover {
-    color: #00A3FF;
+  color: #00A3FF;
 }
 
+/* Main content */
 #content {
-    grid-area: content;
-    padding-left: 5vw;
-    padding-bottom: 5vh;
+  grid-area: content;
 }
 
 #p1 {
-    font-size: 6vw;
+  font-size: 4rem;
 }
 
 #p2 {
-    font-size: 5vw;
+  font-size: 3.5rem;
 }
 
 #p3 {
-    font-size: 1.25vw;
+  font-size: 1.1rem;
 }
 
+/* Link animation */
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  animation: link 4s;
+}
+
+@keyframes link {
+  0%   { color: white; }
+  25%  { color: #00A3FF; }
+  50%  { color: #DB00FF; }
+  75%  { color: #00A3FF; }
+  100% { color: white; }
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
-    .container {
-        grid-template-areas: 
-            "navI"
-            "navL"
-            "content";
-        grid-template-columns: 1fr;
-    }
+  .container {
+    grid-template-areas:
+      "navI"
+      "navL"
+      "content";
+    grid-template-columns: 1fr;
+    padding: 3vh;
+  }
 
-    #navL {
-        font-size: 1.2rem;
-        height: auto; /* Adjust height for smaller screens */
-        width: auto; /* Adjust width for smaller screens */
-        margin: 20px auto; /* Center for smaller screens */
-    }
+  #navI {
+    justify-content: center;
+    gap: 8vw;
+    padding: 2vh 0;
+  }
 
-    #content {
-        padding: 20px; /* Adjust padding for smaller screens */
-    }
+  #navI img {
+    width: 10vw;
+  }
 
-    #p1 {
-        font-size: 7vw;
-    }
+  #navL {
+    font-size: 1.4rem;
+    height: auto;
+    width: auto;
+    margin: 2vh auto;
+    flex-direction: row;
+    padding: 2vh;
+  }
 
-    #p2 {
-        font-size: 6vw;
-    }
+  #navL ul {
+    display: flex;
+    gap: 5vw;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    #p3 {
-        font-size: 4vw;
-    }
+  #navL ul li {
+    margin: 0;
+  }
+
+  #content {
+    padding: 2vh;
+  }
+
+  #p1 {
+    font-size: 3.5rem;
+  }
+
+  #p2 {
+    font-size: 2.75rem;
+  }
+
+  #p3 {
+    font-size: 1.5rem;
+  }
 }

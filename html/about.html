@@ -1,124 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <head>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <title>About Matthew Joseph</title>
 
-
-    <title>
-            About Matthew Joseph
-    </title>
-
-    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
-    
-    <link href="../css/about.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=JetBrains+Mono" rel="stylesheet" />
+    <link href="../css/about.css" rel="stylesheet" />
 </head>
 
-    <body ></body>
-        <div class="border">
+<body>
+    <div class="border"></div> <!-- Fixed border -->
 
-            <nav id="navI">
-                <a href="mailto: matthew.joseph.xpndble@gmail.com">
-                    <img src="../images/gmail.webp" alt="Image link to email"></a>
-                <a href="https://github.com/Matt-GitHubs">
-                    <img src="../images/git.png" alt="Image link to github">
-                </a>
-            </nav>
-
-            <nav id="navL" class="id"> 
-                <ul class="l">
-                    <li class="nli"><a href="../index.html">Home</a></li>
-                    <li class="nli"><a href="projects.html">Projects</a></li>
-                    <li class="nli"><a href="about.html">About</a></li>
+    <main>
+        <div class="top-nav">
+            <nav id="navL">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
 
-            <div>
-                <div id="pad">
-                <p id="p1">Hi, I'm Matthew</p>
-                <p id="p2">I am a Web and Mobile Developer.
-                    I am passionate about developing websites that 
-                    allow me to display my creativity and technical skills.
-                    I have a keen eye for detail and always design whatever 
-                    project I'm doing down to the last pixel.</p>
+            <nav id="navI">
+                <a href="mailto:matthew.joseph.xpndble@gmail.com">
+                    <img src="../images/gmail.webp" alt="Email icon" />
+                </a>
+                <a href="https://github.com/Matt-GitHubs">
+                    <img src="../images/git.png" alt="GitHub icon" />
+                </a>
+            </nav>
+        </div>
 
-                    <button type="button" class="collapsible">Experience</button>
-                    <div class="content">
-                        <p> <b><a href="https://za.linkedin.com/company/capacitiza" class="link">CAPACITI</a></b><br><br>
-                            Web Development Learnership<br>
-                            December 2024 - Present<br>
-                        </p>
-                    </div>
+        <div id="pad">
+            <p id="p1">Hi, I'm Matthew</p>
+            <p id="p2">
+                I am a Web and Mobile Developer.
+                I am passionate about developing websites that
+                allow me to display my creativity and technical skills.
+                I have a keen eye for detail and always design whatever
+                project I'm doing down to the last pixel.
+            </p>
 
-                    <button type="button" class="collapsible">Education</button>
-                    <div class="content">
-                        <p> <b><a href="https://www.linkedin.com/school/stadio-highereducation" class="link">Stadio Higher Education</a></b><br><br>
-                            Bachelor's Degree of Information Technology in Web Development and Design<br>
-                            2021 - 2024<br><br>
-                        
-                            Graduation Date: 16 May 2024<br><br>
-
-                            <a href="Files/Results.pdf" class="link"><b>Results: </b></a>I completed this degree with Cum Laude and 18 distinctions<br><br>
-
-                            While completing this degree I learned the following languages:<br>
-                            
-                            <ul>
-                                <li>HTML</li>
-                                <li>JavaScript</li>
-                                <li>CSS</li>
-                                <li>PHP</li>
-                                <li>ASP.Net</li>
-                                <li>MS SQL</li>
-                                <li>MySQL</li>
-                                <li>Java</li>
-                                <li>Kotlin</li>
-                                <li>XML</li>
-                            </ul><br><br>
-
-                            I also completed the following Modules:<br>
-                            <ul>
-                                <li>Web Development</li>
-                                <li>Information Systems</li>
-                                <li>Mobile App Development</li>
-                                <li>Web Animation Scripting</li>
-                                <li>Web Design</li>
-                                <li>Database Development</li>
-                                <li>Informatics</li>
-                                <li>Web Marketing</li>
-                                <li>Web Interactive Design</li>
-                                <li>Introduction to Research</li>
-                                <li>Statistical Methods</li>
-                                <li>Academic Literacy</li>
-                            </ul><br><br>
-
-                            I am also proficient at using <b>WordPress</b> to develop websites, the <b>jQuery</b> library,
-                        </p>
-                    </div>
-
-                    <script>
-
-                        var coll = document.getElementsByClassName("collapsible");
-                        var i;
-                
-                        for (i = 0; i < coll.length; i++) {
-                        coll[i].addEventListener("click", function() {
-                            this.classList.toggle("active");
-                            var content = this.nextElementSibling;
-                            if (content.style.display === "block") {
-                            content.style.display = "none";
-                            } else {
-                            content.style.display = "block";
-                            }
-                        });
-                        }
-                
-                    </script>
-
-                </div>
+            <button type="button" class="collapsible">Experience</button>
+            <div class="content">
+                <p>
+                    <b><a href="https://za.linkedin.com/company/capacitiza" class="link">CAPACITI</a></b><br /><br />
+                    Full Stack Development Learnership<br />
+                    December 2024 - Present<br />
+                </p>
             </div>
 
+            <button type="button" class="collapsible">Education</button>
+            <div class="content">
+                <p>
+                    <b><a href="https://www.linkedin.com/school/stadio-highereducation" class="link">Stadio Higher Education</a></b><br /><br />
+                    Bachelor's Degree of Information Technology in Web Development and Design<br />
+                    2021 - 2024<br /><br />
+
+                    Graduation Date: 16 May 2024<br /><br />
+
+                    <a href="Files/Results.pdf" class="link"><b>Results: </b></a>I completed this degree with Cum Laude and 18 distinctions<br /><br />
+
+                    While completing this degree I learned the following languages:<br />
+                    <ul>
+                        <li>HTML</li>
+                        <li>JavaScript</li>
+                        <li>CSS</li>
+                        <li>PHP</li>
+                        <li>ASP.Net</li>
+                        <li>MS SQL</li>
+                        <li>MySQL</li>
+                        <li>Java</li>
+                        <li>Kotlin</li>
+                        <li>XML</li>
+                    </ul><br /><br />
+
+                    I also completed the following Modules:<br />
+                    <ul>
+                        <li>Web Development</li>
+                        <li>Information Systems</li>
+                        <li>Mobile App Development</li>
+                        <li>Web Animation Scripting</li>
+                        <li>Web Design</li>
+                        <li>Database Development</li>
+                        <li>Informatics</li>
+                        <li>Web Marketing</li>
+                        <li>Web Interactive Design</li>
+                        <li>Introduction to Research</li>
+                        <li>Statistical Methods</li>
+                        <li>Academic Literacy</li>
+                    </ul><br /><br />
+
+                    I am also proficient at using <b>WordPress</b> to develop websites, the <b>jQuery</b> library,
+                </p>
+            </div>
         </div>
-    </body>
+    </main>
+
+    <script>
+        const coll = document.getElementsByClassName("collapsible");
+        for (let i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                content.style.display = content.style.display === "block" ? "none" : "block";
+            });
+        }
+    </script>
+</body>
 </html>

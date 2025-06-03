@@ -1,144 +1,138 @@
-body{
-    background-color: black;  
-    z-index: 1; 
-    }
-
-.border { 
-    width: 1480px; 
+html, body {
     height: 100%;
-    border: 20px solid transparent; 
-    border-image: conic-gradient(#3779FF 0deg,#DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
-    border-image-slice: 1; 
-    animation: border 4s;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', monospace;
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
 }
 
-@keyframes border{
-    0% {border-image: conic-gradient(#A429FF 0deg, #00A3FF 135deg,  #DB00FF 315deg, #A429FF 360deg); 
-        border-image-slice: 1;}
-    50% {border-image: conic-gradient(#A429FF 0deg, #DB00FF 45deg, #00A3FF 225deg, #A429FF 360deg);
-        border-image-slice: 1;}
-    100% {border-image: conic-gradient(#3779FF 0deg,#DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
-         border-image-slice: 1;}
+/* Fixed animated border frame */
+.border {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: 2vh solid transparent;
+    border-image: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
+    border-image-slice: 1;
+    animation: border 4s ease;
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 9999;
 }
 
-p{
-    color:white;
-    font-family: 'JetBrains Mono';
+/* Border animation (not infinite) */
+@keyframes border {
+    0% {
+        border-image: conic-gradient(#A429FF 0deg, #00A3FF 135deg, #DB00FF 315deg, #A429FF 360deg);
+        border-image-slice: 1;
+    }
+    50% {
+        border-image: conic-gradient(#A429FF 0deg, #DB00FF 45deg, #00A3FF 225deg, #A429FF 360deg);
+        border-image-slice: 1;
+    }
+    100% {
+        border-image: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
+        border-image-slice: 1;
+    }
 }
 
-#p1 {
-    font-size: 90px;
-}
-
-#p2{
-    font-size: 20px;
-    margin-bottom: 65px;
-}
-
-#navI{
-    margin-left: 1140px;
-    margin-top: 25px;
-}
-
-#navL{
-    font-family: 'JetBrains Mono';
-    font-size: 32px;
-    font-weight: bold;
+/* Main scrollable content area inside border */
+main {
     position: relative;
-    bottom: 80px;
+    z-index: 1;
+    padding: 6vh 5vw;
 }
 
-#id{
-    border-bottom: 2px solid transparent; 
-    border-image: linear-gradient(to bottom right, #00A3FF, #DB00FF); 
-    border-image-slice: 1; 
-    animation: navBorder 5s;
-}
-
-@keyframes navBorder{
-    0%{opacity: 0;}
-    50%{opacity: 1;}
-    100%{opacity: 0;}
-}
-
-.link{
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-    animation: link 4s infinite ;
-}
-
-a:link {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-    }
-
-a:visited {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-    }
-
-a:hover {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-    animation: link 4s ;
-    }
-
-@keyframes link{
-    0% {color: white;}
-    25% {color:#00A3FF;}
-    50% {color: #DB00FF;}
-    75% {color: #00A3FF;}
-    100% {color: white;}
-}
-
-a:active {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-}
-
-ul.l{
-    list-style-type: none;
-    padding-right: 20px;
-}
-
-li.nli{
-    display: inline;
-    height: 100px; 
-    height: 100px; 
-    padding-left: 50px;
-
-}
-
-img {
-    width: 60px;
-    height: 60px;
+/* Nav container */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-left: 60px;
+    height: 12vh;
 }
 
-img:hover{
+/* Left nav styles */
+#navL ul {
+    list-style: none;
+    display: flex;
+    gap: 5vw;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+#navL li {
+    display: flex;
+    align-items: center;
+}
+
+#navL a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#navL a:hover {
+    animation: link 4s infinite;
+}
+
+/* Right nav */
+#navI {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+}
+
+#navI img {
+    width: 4vw;
+    height: 4vw;
+    min-width: 40px;
+    min-height: 40px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+#navI img:hover {
     transform: scale(1.1);
-    transition: 0.5s;}
-
-div{
-    width: 1300px;}
-
-#pad{
-    padding-left: 100px;
-    position: relative;
-    bottom: 125px;
 }
 
+/* Animated text link hover */
+@keyframes link {
+    0% { color: white; }
+    25% { color: #00A3FF; }
+    50% { color: #DB00FF; }
+    75% { color: #00A3FF; }
+    100% { color: white; }
+}
+
+/* Text content padding */
+#pad {
+    position: relative;
+}
+
+/* Headings and paragraph styles */
+#p1 {
+    font-size: 6rem;
+}
+
+#p2 {
+    font-size: 1.5rem;
+    margin-bottom: 6vh;
+}
+
+/* Collapsible button */
 .collapsible {
     background-color: black;
     color: white;
     font-family: 'JetBrains Mono';
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: bold;
     cursor: pointer;
     width: 100%;
@@ -148,29 +142,105 @@ div{
     transition: 0.3s;
 }
 
-.active, .collapsible:hover {
-    border: 5px solid transparent;
-    padding: 20px;
-    transition: 0.3s; 
-    border-image: conic-gradient(#3779FF 0deg,#DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
-    border-image-slice: 1; 
+.active,
+.collapsible:hover {
+    border: 0.5vh solid transparent;
+    padding: 2vh 2vw;
+    transition: 0.3s;
+    border-image: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
+    border-image-slice: 1;
     animation: collapse 4s;
 }
 
-@keyframes collapse{
-0% {border-image: conic-gradient(#A429FF 0deg, #00A3FF 135deg,  #DB00FF 315deg, #A429FF 360deg); 
-    border-image-slice: 1;}
-50% {border-image: conic-gradient(#A429FF 0deg, #DB00FF 45deg, #00A3FF 225deg, #A429FF 360deg);
-    border-image-slice: 1;}
-100% {border-image: conic-gradient(#3779FF 0deg,#DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
-     border-image-slice: 1;}
+/* Collapsible animation */
+@keyframes collapse {
+    0% {
+        border-image: conic-gradient(#A429FF 0deg, #00A3FF 135deg, #DB00FF 315deg, #A429FF 360deg);
+        border-image-slice: 1;
+    }
+    50% {
+        border-image: conic-gradient(#A429FF 0deg, #DB00FF 45deg, #00A3FF 225deg, #A429FF 360deg);
+        border-image-slice: 1;
+    }
+    100% {
+        border-image: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
+        border-image-slice: 1;
+    }
 }
 
+/* Collapsible content */
 .content {
     display: none;
     overflow: hidden;
     background-color: black;
     color: white;
     font-family: 'JetBrains Mono';
-    margin-left: 30px;
+    margin-left: 2vw;
+}
+
+/* Links inside collapsible */
+.link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+    animation: link 4s infinite;
+}
+
+.link:hover {
+    animation: link 4s infinite;
+}
+
+/* List spacing */
+ul {
+    padding-left: 2vw;
+}
+
+/* ======================= */
+/* Responsive (Mobile) */
+/* ======================= */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        height: auto;
+        gap: 2vh;
+    }
+
+    #navL ul {
+        flex-direction: row;
+        gap: 2vh;
+        align-items: center;
+    }
+
+    #navL a {
+        font-size: 1.5rem;
+    }
+
+    #navI {
+        justify-content: center;
+        gap: 4vw;
+    }
+
+    #navI img {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    #p1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    #p2 {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .collapsible {
+        font-size: 1.8rem;
+    }
+
+    .content {
+        margin-left: 1vw;
+        font-size: 1rem;
+    }
 }
