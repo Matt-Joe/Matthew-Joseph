@@ -6,7 +6,8 @@ html, body {
     font-family: 'JetBrains Mono', monospace;
     background-color: black;
     color: white;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .border {
@@ -219,8 +220,10 @@ ul {
     }
 
     #navI img {
-        width: 10vw;
-        height: 10vw;
+        width: 12vw;
+        height: 12vw;
+        max-width: 50px;
+        max-height: 50px;
     }
 
     #p1 {

@@ -40,31 +40,131 @@
 
         <div class="grid-container">
             <div class="grid-item">
-                <div class="grid-item-title"><a href="#">Project 1</a></div>
-                <div class="grid-item-holder"></div>
+                <div class="grid-item-title"><a href="#" target="_blank">Avanti Guest Lodge</a></div>
+                <div class="grid-item-holder" id="project1-holder">
+                    <img src="../images/avanti.png" alt="Avanti Guest Lodge Preview" class="project-image" />
+                </div>
             </div>
             <div class="grid-item">
-                <div class="grid-item-title"><a href="#">Project 2</a></div>
-                <div class="grid-item-holder"></div>
+                <div class="grid-item-title"><a href="#" target="_blank">Project 2</a></div>
+                <div class="grid-item-holder" id="project2-holder"></div>
             </div>
             <div class="grid-item">
-                <div class="grid-item-title"><a href="#">Project 3</a></div>
-                <div class="grid-item-holder"></div>
+                <div class="grid-item-title"><a href="#" target="_blank">Project 3</a></div>
+                <div class="grid-item-holder" id="project3-holder"></div>
             </div>
             <div class="grid-item">
-                <div class="grid-item-title"><a href="#">Project 4</a></div>
-                <div class="grid-item-holder"></div>
+                <div class="grid-item-title"><a href="#" target="_blank">Project 4</a></div>
+                <div class="grid-item-holder" id="project4-holder"></div>
             </div>
             <div class="grid-item">
-                <div class="grid-item-title"><a href="#">Project 5</a></div>
-                <div class="grid-item-holder"></div>
+                <div class="grid-item-title"><a href="#" target="_blank">Project 5</a></div>
+                <div class="grid-item-holder" id="project5-holder"></div>
             </div>
             <div class="grid-item">
-                <div class="grid-item-title"><a href="#">Project 6</a></div>
-                <div class="grid-item-holder"></div>
+                <div class="grid-item-title"><a href="#" target="_blank">Project 6</a></div>
+                <div class="grid-item-holder" id="project6-holder"></div>
             </div>
         </div>
         </main>
+
+        <div id="project1-modal" class="modal">
+            <div class="modal-content modal-project1">
+                <span class="close" data-modal="project1-modal">&times;</span>
+                <h2>Avanti Guest Lodge</h2>
+                <p>This is a holiday booking website where users are able to book for and pay for their holidays. 
+                    They can also create accounts to check their profile and bookings that they have made.
+                    The rest of the site consists of information about the lodge, the rooms available, and the
+                    services that they offer.<br><br> 
+                    The site is built using HTML, CSS, and JavaScript for the front-end, Supabase for the database, 
+                    Render for the back-end, and Stripe for payment processing. It was deployed on Netlify.   
+                </p>
+                <a href="https://avantiguestlodge.netlify.app/" target="Avanti Guest Lodge">
+                <button type="button">Visit Site</button>
+                </a>
+            </div>
+        </div>
+
+        <div id="project2-modal" class="modal">
+            <div class="modal-content modal-project2">
+                <span class="close" data-modal="project2-modal">&times;</span>
+                <h2>Project 2</h2>
+                <p>Description for Project 2...</p>
+            </div>
+        </div>
+
+        <div id="project3-modal" class="modal">
+            <div class="modal-content modal-project3">
+                <span class="close" data-modal="project3-modal">&times;</span>
+                <h2>Project 3</h2>
+                <p>Description for Project 3...</p>
+            </div>
+        </div>
+
+        <div id="project4-modal" class="modal">
+            <div class="modal-content modal-project4">
+                <span class="close" data-modal="project4-modal">&times;</span>
+                <h2>Project 4</h2>
+                <p>Description for Project 4...</p>
+            </div>
+        </div>
+
+        <div id="project5-modal" class="modal">
+            <div class="modal-content modal-project5">
+                <span class="close" data-modal="project5-modal">&times;</span>
+                <h2>Project 5</h2>
+                <p>Description for Project 5...</p>
+            </div>
+        </div>
+
+        <div id="project6-modal" class="modal">
+            <div class="modal-content modal-project6">
+                <span class="close" data-modal="project6-modal">&times;</span>
+                <h2>Project 6</h2>
+                <p>Description for Project 6...</p>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const clickableElements = [
+                    { id: "project1-holder", modal: "project1-modal" },
+                    { id: "project2-holder", modal: "project2-modal" },
+                    { id: "project3-holder", modal: "project3-modal" },
+                    { id: "project4-holder", modal: "project4-modal" },
+                    { id: "project5-holder", modal: "project5-modal" },
+                    { id: "project6-holder", modal: "project6-modal" },
+                ];
+
+                clickableElements.forEach(({ id, modal }) => {
+                    const holder = document.getElementById(id);
+                    const title = holder.previousElementSibling.querySelector('a');
+
+                    const showModal = () => {
+                        document.getElementById(modal).classList.add("show");
+                    };
+
+                    if (holder) holder.addEventListener("click", showModal);
+                    if (title) title.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        showModal();
+                    });
+                });
+
+                document.querySelectorAll(".close").forEach(closeBtn => {
+                    closeBtn.addEventListener("click", () => {
+                        const modalId = closeBtn.getAttribute("data-modal");
+                        document.getElementById(modalId).classList.remove("show");
+                    });
+                });
+
+                window.addEventListener("click", (event) => {
+                    if (event.target.classList.contains("modal")) {
+                        event.target.classList.remove("show");
+                    }
+                });
+            });
+        </script>
 
 </body>
 

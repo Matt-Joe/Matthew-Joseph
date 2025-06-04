@@ -157,8 +157,10 @@ a:hover {
   }
 
   #navI img {
-    width: 10vw;
-    height: 10vw;
+    width: 12vw;
+    height: 12vw;
+    max-width: 50px;
+    max-height: 50px;
   }
 
   #navL {
@@ -168,6 +170,7 @@ a:hover {
     margin: auto;
     flex-direction: row;
     border: none;
+    margin: 2vh;
   }
 
   #navL ul {

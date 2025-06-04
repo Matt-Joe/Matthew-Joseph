@@ -1,3 +1,8 @@
+/* Lato */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* Playfair Display */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 html, body {
     height: 100%;
     width: 100%;
@@ -115,10 +120,6 @@ a:hover {
     100% { color: white; }
 }
 
-img:hover {
-    transform: scale(1.1);
-}
-
 .grid-container {
     display: grid;
     gap: 2vh 5vw;
@@ -147,10 +148,22 @@ img:hover {
     border-image: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
     border-image-slice: 1;
     transition: border-image 1s ease;
+    box-sizing: border-box;
 }
 
 .grid-item-holder:hover {
     animation: grids 4s infinite;
+}
+
+.project-image {
+    height: 100%;
+}
+
+#project1-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #1A2619;
 }
 
 @keyframes grids {
@@ -170,6 +183,129 @@ img:hover {
         border-image: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg); border-image-slice: 1;
     }
 }
+
+/* Modal base style */
+/* Base modal - hidden by default */
+.modal {
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Transition for opacity and transform */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  
+  /* Start slightly scaled down */
+  transform: scale(0.95);
+}
+
+/* When modal is shown */
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+
+/* Base modal content style */
+.modal-content {
+  padding: 1.25rem;
+  width: 80vw;
+  max-width: 37.5rem; /* 600px approx */
+  position: relative;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  position: absolute;
+  right: 1rem;
+  top: 0.625rem;
+  font-size: 1.75rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* Unique modal styles: */
+
+/* Project 1 style */
+.modal-project1 {
+  background-color: #1A2619;
+  border: 0.1875rem solid white; /* 3px */
+  color: white;
+  text-align: center;
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #EDB52C;
+  }
+  p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: white;
+  }
+  button {
+    background-color: #C2BAA5;
+    color: #1A2619;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+    button:hover {
+        background-color: #EDB52C;
+    }
+}
+
+/* Project 2 style */
+.modal-project2 {
+  background-color: #fff3e0;
+  border: 0.1875rem dashed #ef6c00;
+  color: #e65100;
+}
+
+/* Project 3 style */
+.modal-project3 {
+  background-color: #f3e5f5;
+  border: 0.1875rem dotted #8e24aa;
+  color: #4a148c;
+}
+
+/* Project 4 style */
+.modal-project4 {
+  background-color: #e8f5e9;
+  border: 0.1875rem solid #388e3c;
+  color: #1b5e20;
+}
+
+/* Project 5 style */
+.modal-project5 {
+  background-color: #fffde7;
+  border: 0.1875rem double #fbc02d;
+  color: #f57f17;
+}
+
+/* Project 6 style */
+.modal-project6 {
+  background-color: #ede7f6;
+  border: 0.1875rem groove #5e35b1;
+  color: #311b92;
+}
+
 
 /* ----------- RESPONSIVE STYLES ----------- */
 @media (max-width: 768px) {
@@ -194,12 +330,6 @@ img:hover {
         gap: 4vw;
     }
 
-    #navI img {
-        width: 10vw;
-        height: 10vw;
-    }
-
-
     .grid-container {
         grid-template-columns: 1fr;
         gap: 3vh;
@@ -211,14 +341,29 @@ img:hover {
     }
 
     .grid-item-holder {
-        height: 8vh;
+        height: 18vh;
         padding: 2vh;
     }
 
-    img {
+    .project-image {
+    height: 100%;
+    }
+
+    #navI img {
         width: 12vw;
         height: 12vw;
         max-width: 50px;
         max-height: 50px;
+    }
+    .modal-content {
+    width: 60vw;
+    padding: 1rem;
+    font-size: 0.9rem;
+    }
+
+    .close {
+        font-size: 1.5rem;
+        right: 0.75rem;
+        top: 0.5rem;
     }
 }
