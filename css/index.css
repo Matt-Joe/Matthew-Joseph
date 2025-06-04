@@ -129,7 +129,7 @@ a:link, a:visited {
 }
 
 a:hover {
-  animation: link 4s;
+  animation: link 4s infinite;
 }
 
 @keyframes link {
@@ -167,7 +167,6 @@ a:hover {
     width: auto;
     margin: auto;
     flex-direction: row;
-    padding: 2vh;
     border: none;
   }
 

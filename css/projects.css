@@ -21,7 +21,7 @@ html, body {
     animation: border 4s ease;
     box-sizing: border-box;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 9997;
 }
 
 @keyframes border {

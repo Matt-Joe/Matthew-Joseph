@@ -7,9 +7,13 @@
     <title>Matthew Joseph's - Projects</title>
     <link href="https://fonts.googleapis.com/css?family=JetBrains+Mono" rel="stylesheet" />
     <link href="../css/projects.css" rel="stylesheet" />
+    <link href="../css/lightDark.css" rel="stylesheet" />
+    <script src="../js/lightDark.js" defer></script>
 </head>
 
 <body>
+    <div id="transition-overlay"></div>
+    <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
     <div class="border"></div>
         <main>
         <div class="top-nav">
@@ -22,11 +26,11 @@
             </nav>
 
             <nav id="navI">
-                <a href="mailto:matthew.joseph.xpndble@gmail.com" aria-label="Send email to Matthew Joseph">
-                    <img src="../images/gmail.webp" alt="Email icon" />
+                <a href="mailto:matthew.joseph.xpndble@gmail.com" aria-label="Email Matthew">
+                    <img src="../images/gmail.webp" alt="Gmail Icon" loading="lazy" />
                 </a>
-                <a href="https://github.com/Matt-GitHubs" aria-label="Visit Matthew Joseph's GitHub">
-                    <img src="../images/git.png" alt="GitHub icon" />
+                <a href="https://github.com/Matt-GitHubs" aria-label="GitHub Profile">
+                    <img src="../images/git.png" alt="GitHub Icon" class="github-icon" loading="lazy" />
                 </a>
                 <a href="https://www.linkedin.com/in/matthew-joseph-a65979247/" aria-label="LinkedIn Profile">
                     <img src="../images/in.png" alt="LinkedIn Icon" loading="lazy" />

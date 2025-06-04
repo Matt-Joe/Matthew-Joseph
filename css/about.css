@@ -6,7 +6,7 @@ html, body {
     font-family: 'JetBrains Mono', monospace;
     background-color: black;
     color: white;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .border {
@@ -21,7 +21,7 @@ html, body {
     animation: border 4s ease;
     box-sizing: border-box;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 9997;
 }
 
 @keyframes border {
@@ -77,10 +77,6 @@ main {
     transition: color 0.3s ease;
 }
 
-#navL a:hover {
-    animation: link 4s infinite;
-}
-
 /* Right nav */
 #navI {
     display: flex;
@@ -99,6 +95,10 @@ main {
 
 #navI img:hover {
     transform: scale(1.1);
+}
+
+#navL a:hover {
+    animation: link 4s infinite;
 }
 
 /* Animated text link hover */

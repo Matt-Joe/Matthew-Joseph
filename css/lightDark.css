@@ -1,0 +1,119 @@
+#theme-toggle {
+  position: fixed;
+  top: 2vh;
+  left: 2vw;
+  z-index: 1000;
+  background: none;
+  color: white;
+  font-size: 1.5rem;
+  margin: 1vw;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+body.light-mode a:link,
+body.light-mode a:visited {
+  color: black;
+}
+
+body.light-mode #theme-toggle {
+  border-color: black;
+  color: black;
+}
+
+body.light-mode #navL {
+  border-image: linear-gradient(to bottom right, #00A3FF, white, white, white, white, #DB00FF);
+  border-image-slice: 1;
+}
+
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+body.light-mode #navL ul li a,
+body.light-mode a:link,
+body.light-mode a:visited {
+  color: black;
+}
+
+body.light-mode a:hover,
+body.light-mode #navL ul li a:hover,
+body.light-mode .link:hover {
+  animation: link-light 4s infinite;
+  animation-fill-mode: both;
+}
+
+
+@keyframes link-light {
+  0%   { color: black; }
+  25%  { color: #00A3FF; }
+  50%  { color: #DB00FF; }
+  75%  { color: #00A3FF; }
+  100% { color: black; }
+}
+
+body.light-mode .github-icon {
+  filter: invert(1);
+}
+
+body {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+#navL {
+  transition: border-image 0.5s;
+}
+
+#navL ul li a {
+  transition: color 0.5s;
+}
+
+.github-icon {
+  transition: filter 0.5s;
+}
+
+body.light-mode .collapsible {
+  background-color: white;
+  color: black;
+}
+
+body.light-mode .content {
+  background-color: white;
+  color: black;
+}
+
+.collapsible,
+.content {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+#transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black; /* match your dark theme */
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Show overlay */
+#transition-overlay.show {
+    opacity: 1;
+    pointer-events: all;
+}
