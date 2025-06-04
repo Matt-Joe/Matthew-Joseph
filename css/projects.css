@@ -136,6 +136,7 @@ img:hover {
     color: white;
     font-family: 'JetBrains Mono', monospace;
     font-weight: bold;
+    margin: 2vh;
 }
 
 .grid-item-holder {
@@ -172,39 +173,45 @@ img:hover {
 
 /* ----------- RESPONSIVE STYLES ----------- */
 @media (max-width: 768px) {
-    html {
-        font-size: 14px;
-    }
-
-    .top-nav {
+     .top-nav {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5vh;
+        height: auto;
+        gap: 2vh;
     }
 
     #navL ul {
-        flex-direction: column;
-        gap: 1.5vh;
+        flex-direction: row;
+        gap: 2vh;
+        align-items: center;
+    }
+
+    #navL a {
         font-size: 1.5rem;
     }
 
     #navI {
-        justify-content: flex-start;
-        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4vw;
     }
+
+    #navI img {
+        width: 10vw;
+        height: 10vw;
+    }
+
 
     .grid-container {
         grid-template-columns: 1fr;
-        padding: 1vh;
-        gap: 2vh;
+        gap: 3vh;
     }
 
     .grid-item-title {
         font-size: 1.5rem;
+        margin: 2vh;
     }
 
     .grid-item-holder {
-        height: auto;
+        height: 8vh;
         padding: 2vh;
     }
 

@@ -24,7 +24,7 @@ html, body {
   grid-template-columns: 1fr auto;
   width: 100vw;
   height: 100vh;
-  padding: 5vh;
+  padding: 5.9vh 4vw;
   border: 2vh solid transparent;
   border-image: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
   border-image-slice: 1;
@@ -50,12 +50,16 @@ html, body {
   grid-area: navI;
   display: flex;
   justify-content: flex-end;
-  gap: 1.5vw;
+  gap: 2vw;
 }
 
 #navI img {
-  width: 4vw;
-  transition: transform 0.5s;
+    width: 4vw;
+    height: 4vw;
+    min-width: 40px;
+    min-height: 40px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
 }
 
 #navI img:hover {
@@ -140,35 +144,36 @@ a:hover {
 @media (max-width: 768px) {
   .container {
     grid-template-areas:
-      "navI"
       "navL"
+      "navI"
       "content";
     grid-template-columns: 1fr;
-    padding: 3vh;
+    padding: 2vh;
   }
 
   #navI {
     justify-content: center;
-    gap: 8vw;
-    padding: 2vh 0;
+    gap: 4vw;
   }
 
   #navI img {
     width: 10vw;
+    height: 10vw;
   }
 
   #navL {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     height: auto;
     width: auto;
-    margin: 2vh auto;
+    margin: auto;
     flex-direction: row;
     padding: 2vh;
+    border: none;
   }
 
   #navL ul {
     display: flex;
-    gap: 5vw;
+    gap: 4vw;
     flex-wrap: wrap;
     justify-content: center;
   }
