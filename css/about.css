@@ -9,7 +9,6 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Fixed animated border frame */
 .border {
     position: fixed;
     top: 0;
@@ -25,7 +24,6 @@ html, body {
     z-index: 9999;
 }
 
-/* Border animation (not infinite) */
 @keyframes border {
     0% {
         border-image: conic-gradient(#A429FF 0deg, #00A3FF 135deg, #DB00FF 315deg, #A429FF 360deg);

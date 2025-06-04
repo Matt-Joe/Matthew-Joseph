@@ -50,7 +50,7 @@ html, body {
   grid-area: navI;
   display: flex;
   justify-content: flex-end;
-  gap: 3vw;
+  gap: 1.5vw;
 }
 
 #navI img {
@@ -69,7 +69,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
   border-width: 0.5vh;
