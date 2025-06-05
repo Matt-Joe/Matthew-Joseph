@@ -6,8 +6,8 @@ html, body {
     font-family: 'JetBrains Mono', monospace;
     background-color: black;
     color: white;
+    overflow-y: auto;
     overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 .border {

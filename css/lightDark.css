@@ -55,6 +55,16 @@ body.light-mode .link:hover {
   animation-fill-mode: both;
 }
 
+body.light-mode .link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  animation: link-light 4s infinite;
+}
+
+body.light-mode .link:hover {
+  animation: link-light 4s infinite;
+}
 
 @keyframes link-light {
   0%   { color: black; }
