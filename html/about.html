@@ -41,14 +41,57 @@
         </div>
 
         <div id="pad">
-            <p id="p1">Hi, I'm Matthew</p>
-            <p id="p2">
-                I am a Web and Mobile Developer.
-                I am passionate about developing websites that
-                allow me to display my creativity and technical skills.
-                I have a keen eye for detail and always design whatever
-                project I'm doing down to the last pixel.
-            </p>
+            <h1 id="skills-heading">Technical Skills</h1>
+            <div id="languages-grid">
+                <div class="lang-logo">
+                    <img src="../logos/html.png" alt="HTML Logo" />
+                    <p class="lang-text">HTML</p>
+                </div>
+                <div class="lang-logo">
+                    <img src="../logos/css.png" alt="CSS Logo" />
+                    <p class="lang-text">CSS</p>
+                </div>
+                <div class="lang-logo">
+                    <img src="../logos/js.png" alt="JavaScript Logo" />
+                    <p class="lang-text">JavaScript</p>
+                </div>
+                <div class="lang-logo">
+                    <img src="../logos/php.png" alt="PHP Logo" />
+                    <p class="lang-text">PHP</p>
+                </div>
+                <div class="lang-logo">
+                    <img src="../logos/java.png" alt="Java Logo" />
+                    <p class="lang-text">Java</p>
+                </div>
+                <div class="lang-logo">
+                    <img src="../logos/kotlin.png" alt="Kotlin Logo" />
+                    <p class="lang-text">Kotlin</p>
+                </div>
+                <div class="lang-logo">
+                    <img src="../logos/sql.png" alt="SQL Logo" />
+                    <p class="lang-text">SQL</p>
+                </div>
+                <div class="lang-logo">
+                    <img src="../logos/asp.png" alt="ASP.Net Logo" />
+                    <p class="lang-text">ASP.Net</p>
+                </div>
+                <div class="lang-logo">
+                    <img src="../logos/react.png" alt="React Logo" />
+                    <p class="lang-text">React</p>
+                </div>
+                <div class="lang-logo">
+                    <img src="../logos/node.png" alt="Node Logo" />
+                    <p class="lang-text">Node.js</p>
+                </div>
+                <div class="lang-logo">
+                    <img src="../logos/csharp.png" alt="C# Logo" />
+                    <p class="lang-text">C#</p>
+                </div>
+                <div class="lang-logo">
+                    <img src="../logos/wordpress.png" alt="WordPress Logo" />
+                    <p class="lang-text">WordPress</p>
+                </div>
+            </div>
 
             <button type="button" class="collapsible">Experience</button>
             <div class="content">
@@ -112,9 +155,22 @@
             coll[i].addEventListener("click", function () {
                 this.classList.toggle("active");
                 const content = this.nextElementSibling;
-                content.style.display = content.style.display === "block" ? "none" : "block";
+                content.classList.toggle("show");
             });
         }
     </script>
+
+    <script>
+        // Animate each logo with staggered delays
+        const logos = document.querySelectorAll('.lang-logo');
+        logos.forEach((logo, i) => {
+            logo.style.setProperty('--delay', `${i * 0.1}s`);
+            // Show text after animation ends
+            logo.addEventListener('animationend', () => {
+                logo.querySelector('.lang-text').style.opacity = 1;
+            });
+        });
+    </script>
+    
 </body>
 </html>

@@ -115,6 +115,18 @@ html, body {
   color: #00A3FF;
 }
 
+#navL ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.5s, transform 0.3s ease;
+}
+
+#navL ul li a:hover {
+  color: #00A3FF;
+  transform: scale(1.05);
+}
+
+
 /* Main content */
 #content {
   grid-area: content;
@@ -150,6 +162,34 @@ a:hover {
   75%  { color: #00A3FF; }
   100% { color: white; }
 }
+
+.fade-slide {
+  opacity: 0;
+  transform: translateY(-2rem);
+  animation: fadeSlide 0.6s ease-out forwards;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-delay-1 {
+  animation-delay: 0.2s;
+}
+.fade-delay-2 {
+  animation-delay: 0.4s;
+}
+.fade-delay-3 {
+  animation-delay: 0.6s;
+}
+
 
 /* Responsive styles */
 @media (max-width: 768px) {

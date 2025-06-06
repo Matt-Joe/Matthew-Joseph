@@ -40,14 +40,12 @@ html, body {
     }
 }
 
-/* Main scrollable content area inside border */
 main {
     position: relative;
     z-index: 1;
     padding: 6vh 5vw;
 }
 
-/* Nav container */
 .top-nav {
     display: flex;
     justify-content: space-between;
@@ -55,7 +53,6 @@ main {
     height: 12vh;
 }
 
-/* Left nav styles */
 #navL ul {
     list-style: none;
     display: flex;
@@ -78,7 +75,21 @@ main {
     transition: color 0.3s ease;
 }
 
-/* Right nav */
+#navL a:hover {
+    animation: link 4s infinite;
+}
+
+#navL ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.5s, transform 0.3s ease;
+}
+
+#navL ul li a:hover {
+  color: #00A3FF;
+  transform: scale(1.05);
+}
+
 #navI {
     display: flex;
     gap: 2vw;
@@ -88,8 +99,8 @@ main {
 #navI img {
     width: 4vw;
     height: 4vw;
-    min-width: 40px;
-    min-height: 40px;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
     cursor: pointer;
     transition: transform 0.5s ease;
 }
@@ -98,11 +109,6 @@ main {
     transform: scale(1.1);
 }
 
-#navL a:hover {
-    animation: link 4s infinite;
-}
-
-/* Animated text link hover */
 @keyframes link {
     0% { color: white; }
     25% { color: #00A3FF; }
@@ -111,12 +117,10 @@ main {
     100% { color: white; }
 }
 
-/* Text content padding */
 #pad {
     position: relative;
 }
 
-/* Headings and paragraph styles */
 #p1 {
     font-size: 5rem;
 }
@@ -126,7 +130,6 @@ main {
     margin-bottom: 6vh;
 }
 
-/* Collapsible button */
 .collapsible {
     background-color: black;
     color: white;
@@ -151,7 +154,6 @@ main {
     animation: collapse 4s;
 }
 
-/* Collapsible animation */
 @keyframes collapse {
     0% {
         border-image: conic-gradient(#A429FF 0deg, #00A3FF 135deg, #DB00FF 315deg, #A429FF 360deg);
@@ -167,7 +169,6 @@ main {
     }
 }
 
-/* Collapsible content */
 .content {
     display: none;
     overflow: hidden;
@@ -175,9 +176,26 @@ main {
     color: white;
     font-family: 'JetBrains Mono';
     margin-left: 2vw;
+    animation: fadeSlide 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-2rem);
 }
 
-/* Links inside collapsible */
+.content.show {
+    display: block;
+}
+
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .link {
     color: white;
     background-color: transparent;
@@ -185,18 +203,77 @@ main {
     animation: link 4s infinite;
 }
 
-.link:hover {
-    animation: link 4s infinite;
-}
-
-/* List spacing */
 ul {
     padding-left: 2vw;
 }
 
-/* ======================= */
-/* Responsive (Mobile) */
-/* ======================= */
+#languages-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    justify-items: center;
+    padding: 0 1rem;
+    margin-bottom: 4rem;
+}
+
+.lang-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-13rem);
+    animation: dropBounce 1s ease-out forwards;
+    animation-delay: var(--delay);
+}
+
+.lang-logo img {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: contain;
+}
+
+.lang-text {
+    margin-top: 0.7rem;
+    font-size: 0.9em;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#skills-heading {
+    margin-bottom: 2rem;
+}
+
+@keyframes dropBounce {
+    0% {
+        transform: translateY(-13rem);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+    65% {
+        transform: translateY(-1.3rem);
+    }
+    80% {
+        transform: translateY(0.6rem);
+    }
+    95% {
+        transform: translateY(-0.3rem);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    #languages-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .top-nav {
         flex-direction: column;
@@ -222,8 +299,8 @@ ul {
     #navI img {
         width: 12vw;
         height: 12vw;
-        max-width: 50px;
-        max-height: 50px;
+        max-width: 3.2rem;
+        max-height: 3.2rem;
     }
 
     #p1 {
@@ -243,5 +320,22 @@ ul {
     .content {
         margin-left: 1vw;
         font-size: 1rem;
+    }
+
+    #languages-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .lang-logo img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .lang-text {
+        font-size: 0.8em;
+    }
+
+    #skills-heading {
+        text-align: center;
     }
 }

@@ -41,13 +41,20 @@
       </div>
 
       <main id="content">
-        <p id="p1">Hi,</p>
-        <p id="p2">I'm Matthew</p>
-        <p id="p3">
+        <p id="p1" class="fade-slide fade-delay-1">Hi,</p>
+        <p id="p2" class="fade-slide fade-delay-2">I'm Matthew</p>
+        <p id="p3" class="fade-slide fade-delay-3">
           I am a Web and Mobile Developer. I am passionate about developing websites that allow me to display my creativity and technical skills.
           I have a keen eye for detail and always design whatever project I'm doing down to the last pixel.
         </p>
       </main>
     </div>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.fade-slide').forEach(el => {
+          el.style.visibility = 'visible'; // Ensure it's visible for animation
+        });
+      });
+    </script>
   </body>
 </html>
