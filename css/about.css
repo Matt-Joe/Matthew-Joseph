@@ -82,7 +82,7 @@ main {
 #navL ul li a {
   color: white;
   text-decoration: none;
-  transition: color 0.5s, transform 0.3s ease;
+  transition: color 0.5s ease;
 }
 
 #navL ul li a:hover {
