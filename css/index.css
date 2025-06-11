@@ -4,7 +4,12 @@ html, body {
   min-height: 100%;
   width: 100%;
   font-family: 'JetBrains Mono', monospace;
-  background-color: black;
+  background: 
+    linear-gradient(115deg, #00a2ff15 0%, #A429FF15 50%, #DB00FF15 100%), 
+    black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   color: white;
   overflow-x: hidden;
 }
@@ -88,7 +93,7 @@ html, body {
   text-align: center;
   border-width: 0.5vh;
   border-style: solid;
-  border-image: linear-gradient(to bottom right, #00A3FF, black, black, black, black, #DB00FF);
+  border-image: linear-gradient(to bottom right, #00A3FF, #11002700, #11002700, #11002700, #11002700, #DB00FF);
   border-image-slice: 1;
   height: 50vh;
   width: 20vw;

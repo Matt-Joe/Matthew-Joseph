@@ -4,7 +4,12 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'JetBrains Mono', monospace;
-    background-color: black;
+    background: 
+    linear-gradient(115deg, #00a2ff15 0%, #A429FF15 50%, #DB00FF15 100%), 
+    black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     color: white;
     overflow-y: auto;
     overflow-x: hidden;
@@ -85,11 +90,6 @@ main {
   transition: color 0.5s ease;
 }
 
-#navL ul li a:hover {
-  color: #00A3FF;
-  transform: scale(1.05);
-}
-
 #navI {
     display: flex;
     gap: 2vw;
@@ -131,7 +131,7 @@ main {
 }
 
 .collapsible {
-    background-color: black;
+    background-color: #11002700;
     color: white;
     font-family: 'JetBrains Mono';
     font-size: 2.5rem;
@@ -172,7 +172,7 @@ main {
 .content {
     display: none;
     overflow: hidden;
-    background-color: black;
+    background-color: #11002700;
     color: white;
     font-family: 'JetBrains Mono';
     margin-left: 2vw;
