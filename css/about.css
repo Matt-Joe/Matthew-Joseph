@@ -5,8 +5,8 @@ html, body {
     padding: 0;
     font-family: 'JetBrains Mono', monospace;
     background: 
-    linear-gradient(115deg, #00a2ff15 0%, #A429FF15 50%, #DB00FF15 100%), 
-    black;
+      linear-gradient(115deg, #00a2ff15 0%, #A429FF15 50%, #DB00FF15 100%), 
+      black;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -56,6 +56,7 @@ main {
     justify-content: space-between;
     align-items: center;
     height: 12vh;
+    flex-wrap: wrap;
 }
 
 #navL ul {
@@ -65,6 +66,7 @@ main {
     padding: 0;
     margin: 0;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #navL li {
@@ -89,9 +91,9 @@ main {
 }
 
 #navL ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.5s ease;
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s ease;
 }
 
 #navI {
@@ -190,14 +192,8 @@ main {
 }
 
 @keyframes fadeSlide {
-    0% {
-        opacity: 0;
-        transform: translateY(-2rem);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(-2rem); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 .link {
@@ -249,29 +245,17 @@ ul {
 }
 
 @keyframes dropBounce {
-    0% {
-        transform: translateY(-13rem);
-        opacity: 0;
-    }
-    50% {
-        transform: translateY(0rem);
-        opacity: 1;
-    }
-    65% {
-        transform: translateY(-1.3rem);
-    }
-    80% {
-        transform: translateY(0.6rem);
-    }
-    95% {
-        transform: translateY(-0.3rem);
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    0% { transform: translateY(-13rem); opacity: 0; }
+    50% { transform: translateY(0rem); opacity: 1; }
+    65% { transform: translateY(-1.3rem); }
+    80% { transform: translateY(0.6rem); }
+    95% { transform: translateY(-0.3rem); }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
+/* =====================
+   Responsive
+   ===================== */
 @media (max-width: 1024px) {
     #languages-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -288,7 +272,8 @@ ul {
     #navL ul {
         flex-direction: row;
         gap: 2vh;
-        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     #navL a {

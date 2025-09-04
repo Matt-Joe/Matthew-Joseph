@@ -457,7 +457,8 @@ a:hover {
     #navL ul {
         flex-direction: row;
         gap: 2vh;
-        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     #navL a {
@@ -491,8 +492,8 @@ a:hover {
     #navI img {
         width: 12vw;
         height: 12vw;
-        max-width: 50px;
-        max-height: 50px;
+        max-width: 3.2rem;
+        max-height: 3.2rem;
     }
     .modal-content {
     width: 60vw;

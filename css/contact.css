@@ -4,14 +4,11 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'JetBrains Mono', monospace;
-    background: 
-    linear-gradient(115deg, #00a2ff15 0%, #A429FF15 50%, #DB00FF15 100%), 
-    black;
+    background: linear-gradient(115deg, #00a2ff15 0%, #A429FF15 50%, #DB00FF15 100%), black;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     color: white;
-    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -32,18 +29,9 @@ html, body {
 }
 
 @keyframes border {
-    0% {
-        border-image: conic-gradient(#A429FF 0deg, #00A3FF 135deg, #DB00FF 315deg, #A429FF 360deg);
-        border-image-slice: 1;
-    }
-    50% {
-        border-image: conic-gradient(#A429FF 0deg, #DB00FF 45deg, #00A3FF 225deg, #A429FF 360deg);
-        border-image-slice: 1;
-    }
-    100% {
-        border-image: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
-        border-image-slice: 1;
-    }
+    0% { border-image: conic-gradient(#A429FF 0deg, #00A3FF 135deg, #DB00FF 315deg, #A429FF 360deg); border-image-slice: 1; }
+    50% { border-image: conic-gradient(#A429FF 0deg, #DB00FF 45deg, #00A3FF 225deg, #A429FF 360deg); border-image-slice: 1; }
+    100% { border-image: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg); border-image-slice: 1; }
 }
 
 main {
@@ -58,6 +46,7 @@ main {
     justify-content: space-between;
     align-items: center;
     height: 12vh;
+    flex-wrap: wrap;
 }
 
 #navL ul {
@@ -67,6 +56,7 @@ main {
     padding: 0;
     margin: 0;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #navL li {
@@ -197,9 +187,7 @@ main {
   border-radius: inherit;
   padding: 0.4vh; /* border thickness */
   background: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
   z-index: -1;
@@ -240,8 +228,33 @@ main {
     animation: link 4s infinite;
 }
 
-/* Responsive tweaks */
+/* ===========================
+   Responsive Styles
+   =========================== */
 @media (max-width: 768px) {
+    /* Mobile nav consistency */
+    .top-nav {
+        flex-direction: column;
+        height: auto;
+        gap: 2vh;
+    }
+
+    #navL ul {
+        flex-direction: row;
+        gap: 2vh;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #navL a {
+        font-size: 1.5rem;
+    }
+
+    #navI {
+        justify-content: center;
+        gap: 4vw;
+    }
+
     #navI img {
         width: 10vw;
         height: 10vw;
@@ -249,28 +262,72 @@ main {
         max-height: 45px;
     }
 
+    /* Contact section */
     #contact {
         margin: 5vh auto;
-        padding: 3vh 2vw;
+        padding: 3vh 4vw;
+        border: none; /* remove border */
+        backdrop-filter: none; /* remove blur effect if desired */
     }
 
     #contact h2 {
-        font-size: 1.5rem;
+        font-size: 1.7rem; /* larger heading for mobile */
+        text-align: center;
     }
 
-    #contact-form button {
-        font-size: 0.9rem;
-        padding: 1vh 1.5vw;
-    }
-
+    /* Two-column layout collapses to single column */
     .contact-container {
         flex-direction: column;
         gap: 3vh;
     }
 
+    /* Form adjustments */
+    #contact-form {
+        gap: 2vh;
+    }
+
+    #contact-form label {
+        font-size: 1.1rem; /* slightly bigger for readability */
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        font-size: 1rem; /* easier to read on mobile */
+        padding: 1.5vh 1.5vw;
+        border: none; /* remove input borders for cleaner look */
+    }
+
+    #contact-form button {
+        font-size: 1rem;
+        padding: 1.5vh 2vw;
+        border: none; /* remove button borders */
+    }
+
+    /* Contact details adjustments */
     .contact-details {
-        border-left: none;
-        border-top: 0.3vh solid rgba(255,255,255,0.2);
-        padding-top: 2vh;
+        flex: 1;
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 2vh 0;
+        border: none; /* remove any borders */
+        width: 100%;
+    }
+
+    .contact-details h3 {
+        font-size: 1.4rem; /* slightly larger heading */
+        margin-bottom: 1.5vh;
+        text-align: center;
+    }
+
+    .contact-details a {
+        font-size: 0.8rem;
+    }
+
+    /* Inputs and buttons full width */
+    #contact-form input,
+    #contact-form textarea,
+    #contact-form button {
+        width: 100%;
+        box-sizing: border-box;
     }
 }

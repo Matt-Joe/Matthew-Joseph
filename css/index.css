@@ -100,6 +100,7 @@ html, body {
   margin: auto;
 }
 
+/* Desktop nav links */
 #navL ul {
   list-style-type: none;
   padding: 0;
@@ -108,16 +109,6 @@ html, body {
 
 #navL ul li {
   margin: 5vh 0;
-}
-
-#navL ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.5s;
-}
-
-#navL ul li a:hover {
-  color: #00A3FF;
 }
 
 #navL ul li a {
@@ -132,9 +123,8 @@ html, body {
 }
 
 #current a {
-    animation: link 4s;
+  animation: link 4s;
 }
-
 
 /* Main content */
 #content {
@@ -172,6 +162,7 @@ a:hover {
   100% { color: white; }
 }
 
+/* Fade slide animation */
 .fade-slide {
   opacity: 0;
   transform: translateY(-2rem);
@@ -179,28 +170,17 @@ a:hover {
 }
 
 @keyframes fadeSlide {
-  0% {
-    opacity: 0;
-    transform: translateY(-2rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(-2rem); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-.fade-delay-1 {
-  animation-delay: 0.2s;
-}
-.fade-delay-2 {
-  animation-delay: 0.4s;
-}
-.fade-delay-3 {
-  animation-delay: 0.6s;
-}
+.fade-delay-1 { animation-delay: 0.2s; }
+.fade-delay-2 { animation-delay: 0.4s; }
+.fade-delay-3 { animation-delay: 0.6s; }
 
-
-/* Responsive styles */
+/* ==============================
+   Responsive styles
+   ============================== */
 @media (max-width: 768px) {
   .container {
     grid-template-areas:
@@ -219,25 +199,28 @@ a:hover {
   #navI img {
     width: 12vw;
     height: 12vw;
-    max-width: 50px;
-    max-height: 50px;
+    max-width: 3.2rem;
+    max-height: 3.2rem;
   }
 
+  /* Mobile nav */
   #navL {
     font-size: 1.5rem;
     height: auto;
     width: auto;
-    margin: auto;
-    flex-direction: row;
+    margin: 3vh auto;
+    flex-direction: column;
+    align-items: flex-start;
     border: none;
-    margin: 3vh;
   }
 
   #navL ul {
     display: flex;
-    gap: 4vw;
+    flex-direction: row;
+    gap: 2vh;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0;
   }
 
   #navL ul li {
