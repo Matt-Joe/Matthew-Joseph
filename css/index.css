@@ -107,7 +107,7 @@ html, body {
 }
 
 #navL ul li {
-  margin: 10vh 0;
+  margin: 5vh 0;
 }
 
 #navL ul li a {
@@ -129,6 +129,10 @@ html, body {
 #navL ul li a:hover {
   color: #00A3FF;
   transform: scale(1.05);
+}
+
+#current a {
+    animation: link 4s;
 }
 
 

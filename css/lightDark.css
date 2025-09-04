@@ -25,7 +25,6 @@ body.light-mode {
   transition: background-color 0.5s, color 0.5s;
 }
 
-
 body.light-mode a:link,
 body.light-mode a:visited {
   color: black;
@@ -41,11 +40,6 @@ body.light-mode #navL {
   border-image-slice: 1;
 }
 
-body.light-mode {
-  background-color: white;
-  color: black;
-}
-
 body.light-mode #navL ul li a,
 body.light-mode a:link,
 body.light-mode a:visited {
@@ -56,6 +50,11 @@ body.light-mode a:hover,
 body.light-mode #navL ul li a:hover,
 body.light-mode .link:hover {
   animation: link-light 4s infinite;
+  animation-fill-mode: both;
+}
+
+body.light-mode #current a {
+  animation: link-light 4s;
   animation-fill-mode: both;
 }
 
@@ -130,4 +129,27 @@ body.light-mode .content {
 #transition-overlay.show {
     opacity: 1;
     pointer-events: all;
+}
+
+/* =============================
+   Light Mode Contact Form Overrides
+   ============================= */
+body.light-mode #contact-form input,
+body.light-mode #contact-form textarea {
+    background: rgba(0, 0, 0, 0.05); /* slightly darker for readability */
+    color: black; /* text inside fields */
+}
+
+body.light-mode #contact-form input::placeholder,
+body.light-mode #contact-form textarea::placeholder {
+    color: #666; /* placeholder text visible in light mode */
+}
+
+body.light-mode #contact-form button {
+    color: black; /* button text black on light mode */
+}
+
+/* Optional: lighten the pseudo-element border on light mode if using conic-gradient */
+body.light-mode #contact-form button::before {
+    background: conic-gradient(#3779FF 0deg, #DB00FF 135deg, #00A3FF 315deg, #3779FF 360deg);
 }

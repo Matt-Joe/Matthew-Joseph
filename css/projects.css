@@ -117,6 +117,10 @@ a:hover {
     animation: link 4s infinite;
 }
 
+#current a {
+    animation: link 4s;
+}
+
 @keyframes link {
     0% { color: white; }
     25% { color: #00A3FF; }
